@@ -37,13 +37,25 @@ function App() {
     // setPlantArray(plantArray = [...plantArray, e])
 }
 
+  function updatePlants(updatedPlant) {
+    const updatedPlants = plantArray.map((plant)=>{
+      if (plant.id === updatedPlant.id) {
+        return updatedPlant
+      } else {
+        return plant
+      }
+    })
+    setPlantArray(plantArray = updatedPlants)
+  }
+
+
   console.log(plantArray)
 
 
   return (
     <div className="app">
       <Header />
-      <PlantPage plants={plantArray} handleSubmit={handleSubmit} deletePlant={deletePlant} />
+      <PlantPage plants={plantArray} updatePlants={updatePlants} handleSubmit={handleSubmit} deletePlant={deletePlant} />
     </div>
   );
 }

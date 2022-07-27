@@ -3,7 +3,7 @@ import NewPlantForm from "./NewPlantForm";
 import PlantList from "./PlantList";
 import Search from "./Search";
 
-function PlantPage({plants, handleSubmit, deletePlant}) {
+function PlantPage({plants, handleSubmit, deletePlant, updatePlants}) {
   
   const [searchQuery, setSearchQuery] = useState('')
   
@@ -20,7 +20,7 @@ function PlantPage({plants, handleSubmit, deletePlant}) {
     <main>
       <NewPlantForm onSubmit={handleSubmit} />
       <Search onSearch={handleSearch} />
-      <PlantList plants={searchedPlants} deletePlant={deletePlant} />
+      <PlantList plants={searchedPlants} updatePlants={updatePlants} deletePlant={deletePlant} />
     </main>
   );
 }
